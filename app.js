@@ -17,7 +17,15 @@ mongoose
 
 app.use(express.json()); /// Parses any JSON coming in req
 
-app.use("/", defaultRouter);
+const middleware = (req, res, next) => {
+    if (req.body.allow) {
+        next();
+    } else {
+        res.status(401).send({ message: "Unauthorized!", success: false });
+    }
+};
+app.use("/", middleware, defaultRouter);
+
 app.use("/books", booksRouter);
 app.use("/courses", courseRouter);
 
