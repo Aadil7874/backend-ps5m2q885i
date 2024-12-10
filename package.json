@@ -1,0 +1,19 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "approach",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aadil7874/backend-ps5m2q885i.git"
+  },
+  "author": "saiyed aadil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aadil7874/backend-ps5m2q885i/issues"
+  },
+  "homepage": "https://github.com/Aadil7874/backend-ps5m2q885i#readme"
+}
