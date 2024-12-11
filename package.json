@@ -5,7 +5,7 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "backend-dev": "nodemon --env-file=.env app.js",
+    "backend-dev": "nodemon --env-file=.env.local app.js",
     "backend-prod": "nodemon --env-file=.env app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,7 +20,9 @@
   },
   "homepage": "https://github.com/Aadil7874/backend-ps5m2q885i#readme",
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.8.4"
   }
 }
