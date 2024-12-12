@@ -2,6 +2,7 @@ import express from "express";
 import defaultRouter from "./routes/defaultRoute.js";
 import booksRouter from "./routes/booksRoute.js";
 import courseRouter from "./routes/courseRoute.js"
+import mongoose from "mongoose";
 
 const app = express();
 
