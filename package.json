@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Aadil7874/backend-ps5m2q885i#readme",
   "dependencies": {
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "mongoose": "^8.8.4"
   }
 }
