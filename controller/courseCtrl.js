@@ -8,9 +8,9 @@ import { getOptions } from "../utils/utils.js";
 // 2nd Page = 11 - 20
 const get = async (req, res) => {
     try {
-        const { sort, dir, skip, pageSize } = getOptions(req);
+        const { sort, dir, skip, pageSize, filter } = getOptions(req);
         const courses = await courseModel
-            .find()
+            .find(filter)
             .sort({ [sort]: dir })
             .skip(skip)
             .limit(pageSize);
