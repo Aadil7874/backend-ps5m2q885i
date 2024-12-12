@@ -1,5 +1,6 @@
 import bcrypt from "bcrypt"
 import jwt from "jsonwebtoken"
+import { USER_ROLE } from "./constants.js";
 
 const getOptions = (req) => {
     const search = req.query.search || "";
@@ -43,7 +44,7 @@ const comparePassword = (plainPass, hashedPass) => {
     return bcrypt.compare(plainPass, hashedPass);
 }
 const generateToken = (data) => {
-    return jwt.sign(data, process.env.SECRET_KEY, { expiresIn: 60 });
+    return jwt.sign(data, process.env.SECRET_KEY, { expiresIn: "1d" });
 };
 const verifyToken = (req, res, next) => {
     const token = req.headers.authorization.split(" ")[1];
@@ -58,4 +59,14 @@ const verifyToken = (req, res, next) => {
         }
     });
 };
-export { getOptions, authenticate, hashPassword, comparePassword, generateToken, verifyToken };
+
+const isSuperAdmin = (req, res, next) => {
+    const userRole = req.decoded.userRole
+    if (userRole === USER_ROLE.SUPER_ADMIN) {
+        next()
+    } else {
+        res.status(401).send({ message: "Unauthorized!", success: false });
+    }
+}
+
+export { getOptions, authenticate, hashPassword, comparePassword, generateToken, verifyToken, isSuperAdmin };
