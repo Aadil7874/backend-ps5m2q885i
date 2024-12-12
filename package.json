@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Aadil7874/backend-ps5m2q885i/issues"
   },
-  "homepage": "https://github.com/Aadil7874/backend-ps5m2q885i#readme"
+  "homepage": "https://github.com/Aadil7874/backend-ps5m2q885i#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
 }
